@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="DCI_TRANSFER_SERIAR.exe" version="1.0.0.7" publicKeyToken="6c0c3fe46ce166c9" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Zakar-Shining-Z-Msn-anti-SZ.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="DCI_TRANSFER_SERIAR" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="DCI_TRANSFER_SERIAR.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+             If you want to change the Windows User Account Control level replace the 
+             requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
+            Remove this element if your application requires this virtualization for backwards
+            compatibility.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DCI_TRANSFER_SERIAR.exe" size="631792">
+      <assemblyIdentity name="DCI_TRANSFER_SERIAR" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>3Lf3ep+/tvWBW9ZyRAIwEA2E5idkxAh42ROEqPhbiJE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPPlus.dll" size="3213312">
+      <assemblyIdentity name="EPPlus" version="6.1.2.0" publicKeyToken="EA159FDAA78159A1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>NHuIGgqtHqD58Nv8zw7gNTNm1WpjL9K1ym8dyJLeAiQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPPlus.Interfaces.dll" size="6656">
+      <assemblyIdentity name="EPPlus.Interfaces" version="6.1.1.0" publicKeyToken="A694D7F3B0907A61" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>/5a/JHXkTxBkf4ZBu6wSqvaG/2BgCAZRkjule7gMV8A=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPPlus.System.Drawing.dll" size="7168">
+      <assemblyIdentity name="EPPlus.System.Drawing" version="6.1.1.0" publicKeyToken="2308D35469C9BAC0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>h1E3xbiftnilu3jf6QvswjZnUL60S7mKaZDbSO95yrw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialSkin.dll" size="6742528">
+      <assemblyIdentity name="MaterialSkin" version="2.3.1.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>iIX8Q3yLFML8vgT93Gr2qGtj7ZMXWw7hdtqaqT7I6T4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.IO.RecyclableMemoryStream.dll" size="38288">
+      <assemblyIdentity name="Microsoft.IO.RecyclableMemoryStream" version="1.4.1.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>N3q2nJ6ebs6vu5ZVVQSaVMCKhZ4wKUIszz8zk0l1qUs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Audio\dup.wav" size="90186">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>bYDMIhKUy2bA4M78j4KTl8YsuD8Lp+WgxofG9oBzL/Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Audio\no_have.wav" size="111306">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>jTy868CCCvQUckiq+GoeRlaFkdJM8wMdO9Y8eZNJmVU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Audio\no_pass.wav" size="47434">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>qhTL8GA2llysfZ4+KE7BvKvZhVCK8Ex9yf9Bu4F9HH8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Audio\ok.wav" size="129564">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9IL0kReanbxaOnMVvYsbwn8BR1a1wBlJrZY9bknoPjs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Audio\ok2.wav" size="126794">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>f0lZRP9l2eogS6553JVpJALz4GbzeEuz6CevruaEgLw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Audio\pass.wav" size="78922">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>f/2B+Zs/5NBz5f/B/JTLjFcFPDOCaNtC2Q4JlSb8k3I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Audio\ready.wav" size="108490">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Ev+UiJLE8aPBnYGK3D6HYZGkhmFxPphdRdw3JDJHDCQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Config.ini" size="167">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>U4U8fvqJy6ZK3PKQE7E79tL0FgAWwiX6qOJiG6L0hMI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DCI_TRANSFER_SERIAR.exe.config" size="940">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2VUK5Vvh/Q4tB0SYb4lB/dH3RLRyvKSbxBUPTjFZ7YI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Zakar-Shining-Z-Msn-anti-SZ.ico" size="170278">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Luk0DNDusIvTtiixaLrfQRr65iIdS+FerVQcmazbtdM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of the Windows versions that this application has been tested on
+           and is designed to work with. Uncomment the appropriate elements
+           and Windows will automatically select the most compatible environment. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=ITNB17_41256\peerapong.k" issuerKeyHash="8e76f96c17dbbc7bcf92db5af8712e4d1d9acd62" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>ueTww0hW/hz+Owiz2Ie+xl5Mq05L558yWKb44ZeFZqk=</DigestValue></Reference></SignedInfo><SignatureValue>MTRxPF+TnxYW2xvDv4EaRPc7jJJVa8XXZFfZ4GNAdazP241TY4k6akyhbBKmXpoV6ZzurGhkJPMTO9pV+Ak3HKoAFenXOrgGK0qIe/QPqoF9Ck9WVPMRxj/k2xpC5jNFDYffING28h9euyNXEY4+yK8RWZuPtX3lUQD94iD0TqY=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>xqtx8RVcqbUcjAJunLDhmiEcfMxDBH3rW47vOUg4PGjKHe/WfD5tmAi7zJJy3ZaaqKEL8u+0RBlFJ4KRgmXz5mlq3K06hAdu6KMZK2zIghQh9Ncx2OXoOIj2psTyKPr4G7+Ve/swEzBxTDU18GkhYU7jRXgspFVrhudDwDNoG/E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="a9668597e1f8a658329fe74b4eab4c5ec6be87d8b3083bfe1cfe5648c3f0e4b9" Description="" Url=""><as:assemblyIdentity name="DCI_TRANSFER_SERIAR.exe" version="1.0.0.7" publicKeyToken="6c0c3fe46ce166c9" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ITNB17_41256\peerapong.k</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>sWgY/N3IHXn1d7hbpafPqd5ytN30Hou0rwRoL21u4B8=</DigestValue></Reference></SignedInfo><SignatureValue>aKSwrH6vQB/+C5gxUiGPO6v/VSs9PdCoI43mxoENsxB0veix/2A3rv5QivwcQLx9xum7FbzGpuf5T5S8M0gpnyqDu7/UzkGn3rOWDklrm9qrX63nPVjf7TW73Wzotj2WEPfPe8d4GNimEqVOoo35dYdHXzndZA+CX4ew+9RxDMg=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>xqtx8RVcqbUcjAJunLDhmiEcfMxDBH3rW47vOUg4PGjKHe/WfD5tmAi7zJJy3ZaaqKEL8u+0RBlFJ4KRgmXz5mlq3K06hAdu6KMZK2zIghQh9Ncx2OXoOIj2psTyKPr4G7+Ve/swEzBxTDU18GkhYU7jRXgspFVrhudDwDNoG/E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB+TCCAWKgAwIBAgIQVrnks37gLY1HRXiZetNyqzANBgkqhkiG9w0BAQsFADA7MTkwNwYDVQQDHjAASQBUAE4AQgAxADcAXwA0ADEAMgA1ADYAXABwAGUAZQByAGEAcABvAG4AZwAuAGswHhcNMjMxMDI3MDUyMzUxWhcNMjQxMDI2MTEyMzUxWjA7MTkwNwYDVQQDHjAASQBUAE4AQgAxADcAXwA0ADEAMgA1ADYAXABwAGUAZQByAGEAcABvAG4AZwAuAGswgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAMarcfEVXKm1HIwCbpyw4ZohHHzMQwR961uO7zlIODxoyh3v1nw+bZgIu8ySct2WmqihC/LvtEQZRSeCkYJl8+ZpatytOoQHbuijGStsyIIUIfTXMdjl6DiI9qbE8ij6+Bu/lXv7MBMwcUw1NfBpIWFO40V4LKRVa4bnQ8AzaBvxAgMBAAEwDQYJKoZIhvcNAQELBQADgYEADj7ig23juhLhxBhpyYqk8nqyRhWQ6EdvvRqBqt/3w/xSri+p8MNfHceSEDq+AUMwkYKI7A/aQCnD8KfQLvR84tl7/TI30f7CEeBJbhJc+58G1LtS1r43GMUo7iBelNcBl/t0/izKGEb79eydEjSl/yM0faoTweLIM5Pt/YMgH/g=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

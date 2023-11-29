@@ -1,0 +1,15 @@
+﻿'	
+'	DAIKIN Andon Board System InitialFile
+'
+'	DATABASE FILE 
+' 
+' 
+' 
+[PORT]
+COM=
+
+[MODE]
+FINALDATADIT=FALSE
+FNDATACENTER=FALSE
+
+FNCOPYLABELLOG=FALSE
