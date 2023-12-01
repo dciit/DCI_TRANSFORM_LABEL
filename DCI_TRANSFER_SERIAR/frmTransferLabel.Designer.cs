@@ -135,6 +135,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtBitOld = new System.Windows.Forms.Label();
+            this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtBitNew = new System.Windows.Forms.Label();
             this.PanelBtnTransfer.SuspendLayout();
             this.PanelNew.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -165,6 +169,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSummaryAdjust)).BeginInit();
             this.panel5.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
+            this.tableLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // LabelNameSystem
@@ -286,13 +292,13 @@
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.tbKeySerialOld, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel15, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(36, 0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(833, 84);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
@@ -314,11 +320,11 @@
             this.tbKeySerialOld.BackColor = System.Drawing.Color.LightCoral;
             this.tbKeySerialOld.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbKeySerialOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tbKeySerialOld.Location = new System.Drawing.Point(0, 28);
+            this.tbKeySerialOld.Location = new System.Drawing.Point(0, 0);
             this.tbKeySerialOld.Margin = new System.Windows.Forms.Padding(0);
             this.tbKeySerialOld.MaxLength = 16;
             this.tbKeySerialOld.Name = "tbKeySerialOld";
-            this.tbKeySerialOld.Size = new System.Drawing.Size(833, 56);
+            this.tbKeySerialOld.Size = new System.Drawing.Size(744, 56);
             this.tbKeySerialOld.TabIndex = 7;
             this.tbKeySerialOld.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbKeySerialOld.Enter += new System.EventHandler(this.tbKeySerialOld_Enter);
@@ -580,8 +586,8 @@
             // 
             this.tsmnVersion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmnVersion.Name = "tsmnVersion";
-            this.tsmnVersion.Size = new System.Drawing.Size(261, 77);
-            this.tsmnVersion.Text = "( vers. 1.07 แก้ไข lower case )";
+            this.tsmnVersion.Size = new System.Drawing.Size(244, 77);
+            this.tsmnVersion.Text = "( vers. 1.08 add check BIT )";
             // 
             // uploadExcelToolStripMenuItem
             // 
@@ -835,13 +841,13 @@
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.tbKeySerialNew, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel18, 0, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(36, 0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(833, 89);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
@@ -863,10 +869,10 @@
             this.tbKeySerialNew.BackColor = System.Drawing.Color.LightCoral;
             this.tbKeySerialNew.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbKeySerialNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.tbKeySerialNew.Location = new System.Drawing.Point(0, 33);
+            this.tbKeySerialNew.Location = new System.Drawing.Point(0, 0);
             this.tbKeySerialNew.Margin = new System.Windows.Forms.Padding(0);
             this.tbKeySerialNew.Name = "tbKeySerialNew";
-            this.tbKeySerialNew.Size = new System.Drawing.Size(833, 56);
+            this.tbKeySerialNew.Size = new System.Drawing.Size(744, 56);
             this.tbKeySerialNew.TabIndex = 7;
             this.tbKeySerialNew.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbKeySerialNew.Enter += new System.EventHandler(this.tbKeySerialNew_Enter);
@@ -1287,6 +1293,64 @@
             this.tableLayoutPanel17.Size = new System.Drawing.Size(1898, 386);
             this.tableLayoutPanel17.TabIndex = 1;
             // 
+            // tableLayoutPanel15
+            // 
+            this.tableLayoutPanel15.ColumnCount = 2;
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel15.Controls.Add(this.tbKeySerialOld, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.txtBitOld, 1, 0);
+            this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 31);
+            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
+            this.tableLayoutPanel15.RowCount = 1;
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(827, 50);
+            this.tableLayoutPanel15.TabIndex = 1;
+            // 
+            // txtBitOld
+            // 
+            this.txtBitOld.AutoSize = true;
+            this.txtBitOld.BackColor = System.Drawing.Color.White;
+            this.txtBitOld.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBitOld.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtBitOld.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtBitOld.Location = new System.Drawing.Point(747, 0);
+            this.txtBitOld.Name = "txtBitOld";
+            this.txtBitOld.Size = new System.Drawing.Size(77, 50);
+            this.txtBitOld.TabIndex = 8;
+            this.txtBitOld.Text = "BIT";
+            this.txtBitOld.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel18
+            // 
+            this.tableLayoutPanel18.ColumnCount = 2;
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel18.Controls.Add(this.txtBitNew, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.tbKeySerialNew, 0, 0);
+            this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 36);
+            this.tableLayoutPanel18.Name = "tableLayoutPanel18";
+            this.tableLayoutPanel18.RowCount = 1;
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(827, 50);
+            this.tableLayoutPanel18.TabIndex = 1;
+            // 
+            // txtBitNew
+            // 
+            this.txtBitNew.AutoSize = true;
+            this.txtBitNew.BackColor = System.Drawing.Color.White;
+            this.txtBitNew.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBitNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtBitNew.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtBitNew.Location = new System.Drawing.Point(747, 0);
+            this.txtBitNew.Name = "txtBitNew";
+            this.txtBitNew.Size = new System.Drawing.Size(77, 50);
+            this.txtBitNew.TabIndex = 9;
+            this.txtBitNew.Text = "BIT";
+            this.txtBitNew.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmTransferLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1307,7 +1371,6 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.PanelScanOld.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
-            this.tableLayoutPanel7.PerformLayout();
             this.PanelOldHistory.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1333,7 +1396,6 @@
             this.tableLayoutPanel14.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1344,6 +1406,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSummaryAdjust)).EndInit();
             this.panel5.ResumeLayout(false);
             this.tableLayoutPanel17.ResumeLayout(false);
+            this.tableLayoutPanel15.ResumeLayout(false);
+            this.tableLayoutPanel15.PerformLayout();
+            this.tableLayoutPanel18.ResumeLayout(false);
+            this.tableLayoutPanel18.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1437,6 +1503,10 @@
         private System.Windows.Forms.ToolStripMenuItem fNDataCenterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fNCopyLAbelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem การบนทกขอมลToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
+        private System.Windows.Forms.Label txtBitOld;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
+        private System.Windows.Forms.Label txtBitNew;
     }
 }
 

@@ -82,7 +82,25 @@ namespace DCI_TRANSFER_SERIAR
                 {
                     if (tbKeySerialOld.Text.Trim() != tbSerialNew.Text.Trim())
                     {
-                        initRow(tbKeySerialOld, e, "Old");
+                        MCheckBit checkBit = service.validateBit(tbKeySerialOld.Text.Trim());
+                        txtBitOld.Text = checkBit.bitRaw;
+                        if (checkBit.bitCheck == false)
+                        {
+                            callAlert(7000, "Serial Check Bit Not Incorrect !", Color.Red, Color.White);
+                            PlayWav(@"Audio/no_pass.wav");
+                            tbSerialOld.Text = "";
+                            tbLineOld.Text = "";
+                            tbModelCodeOld.Text = "";
+                            tbModelNameOld.Text = "";
+                            btnTransfer.Enabled = false;
+                            btnTransfer.BackColor = SystemColors.ControlLight;
+                            btnTransfer.ForeColor = Color.Black;
+                            return;
+                        }
+                        else
+                        {
+                            initRow(tbKeySerialOld, e, "Old");
+                        }
                     }
                     else
                     {
@@ -106,7 +124,25 @@ namespace DCI_TRANSFER_SERIAR
                 {
                     if (tbKeySerialNew.Text.Trim() != tbSerialOld.Text.Trim())
                     {
-                        initRow(tbKeySerialNew, e, "New");
+                        MCheckBit checkBit = service.validateBit(tbKeySerialNew.Text.Trim());
+                        txtBitNew.Text = checkBit.bitRaw;
+                        if (checkBit.bitCheck == false)
+                        {
+                            callAlert(7000, "Serial Check Bit Not Incorrect !", Color.Red, Color.White);
+                            PlayWav(@"Audio/no_pass.wav");
+                            tbSerialNew.Text = "";
+                            tbLineNew.Text = "";
+                            tbModelCodeNew.Text = "";
+                            tbModelNameNew.Text = "";
+                            btnTransfer.Enabled = false;
+                            btnTransfer.BackColor = SystemColors.ControlLight;
+                            btnTransfer.ForeColor = Color.Black;
+                            return;
+                        }
+                        else
+                        {
+                            initRow(tbKeySerialNew, e, "New");
+                        }
                     }
                     else
                     {
@@ -154,7 +190,7 @@ namespace DCI_TRANSFER_SERIAR
             //serial = serial.Substring(0, serial.Length-1);
             if (tbKeySerialOld.Text.Trim() != tbKeySerialNew.Text.Trim())
             {
-                bool existSerial = service.existSerial(serial.ToUpper());
+                bool existSerial = service.existSerial(serial);
                 if (!existSerial)
                 {
                     txtSerial.Text = "";
@@ -169,7 +205,7 @@ namespace DCI_TRANSFER_SERIAR
                 {
                     if (tbModelCodeOld.Text != "" && tbModelCodeNew.Text != "")
                     {
-                        if (!service.checkTransferMapping(serial.Substring(4, 3).ToUpper(), tbModelCodeNew.Text))
+                        if (!service.checkTransferMapping(serial.Substring(4, 3), tbModelCodeNew.Text))
                         {
                             txtSerial.Text = "";
                             PlayWav(@"Audio/no_have.wav");
@@ -177,7 +213,7 @@ namespace DCI_TRANSFER_SERIAR
                             return;
                         }
                     }
-                    itemDetail = service.getDetailSerial(serial.ToUpper());
+                    itemDetail = service.getDetailSerial(serial);
                     //**************************************
                     // Check Serial Have In Standard (FN_DATA) 
                     //**************************************
@@ -214,14 +250,14 @@ namespace DCI_TRANSFER_SERIAR
                     //**************************************
                     // Check Model Old / New is Mapping 
                     //**************************************
-                    if (!service.checkTransferMapping(tbModelCodeOld.Text, serial.Substring(4, 3).ToUpper()))
+                    if (!service.checkTransferMapping(tbModelCodeOld.Text, serial.Substring(4, 3)))
                     {
                         txtSerial.Text = "";
                         PlayWav(@"Audio/no_have.wav");
                         callAlert(2500, "Model Old and Model New Not Match!", Color.Red, Color.White);
                         return;
                     }
-                    itemDetail = service.getDetailSerialNew(serial.ToUpper());
+                    itemDetail = service.getDetailSerialNew(serial);
                 }
 
                 if (itemDetail.Count == 0)
@@ -286,8 +322,8 @@ namespace DCI_TRANSFER_SERIAR
 
         private void setViewBtnTransfer()
         {
-            tbSerialOld.Text = tbSerialOld.Text.ToUpper();
-            tbSerialNew.Text = tbSerialNew.Text.ToUpper();
+            tbSerialOld.Text = tbSerialOld.Text;
+            tbSerialNew.Text = tbSerialNew.Text;
             if (tbSerialOld.Text.Trim() != "" && tbSerialNew.Text.Trim() != "")
             {
                 btnTransfer.Enabled = true;
@@ -304,20 +340,23 @@ namespace DCI_TRANSFER_SERIAR
 
         private void btnTransfer_Click(object sender, EventArgs e)
         {
-            tbSerialOld.Text = tbSerialOld.Text.ToUpper();
-            tbSerialNew.Text = tbSerialNew.Text.ToUpper();
+            //tbSerialOld.Text = tbSerialOld.Text.ToUpper();
+            //tbSerialNew.Text = tbSerialNew.Text.ToUpper();
             //MSerial ModelOld = setModel(dtgOldSerial, _OLD);
             //MSerial ModelNew = setModel(dtgNewSerial, _NEW);
+
+            //bool DigitIsTrue = service.validateBit(tbSerialOld.Text);
+
             if (tbSerialOld.Text != "" && tbSerialNew.Text != "")
             {
                 MSerial serialForInsert = new MSerial();
-                serialForInsert.SErial_old = tbSerialOld.Text.ToUpper();
+                serialForInsert.SErial_old = tbSerialOld.Text;
                 serialForInsert.MOdelCodeOld = tbModelCodeOld.Text;
                 serialForInsert.MOdelNameOld = tbModelNameOld.Text;
                 serialForInsert.LIneOld = tbLineOld.Text;
                 serialForInsert.REmark = _remark;
 
-                serialForInsert.SErial_new = tbSerialNew.Text.ToUpper();
+                serialForInsert.SErial_new = tbSerialNew.Text;
                 serialForInsert.MOdelCodeNew = tbModelCodeNew.Text;
                 serialForInsert.MOdelNameNew = tbModelNameNew.Text;
                 serialForInsert.LIneNew = tbLineNew.Text;
@@ -490,6 +529,8 @@ namespace DCI_TRANSFER_SERIAR
             tbModelNameOld.Text = "";
             tbLineOld.Text = "";
             btnTransfer.Enabled = false;
+            txtBitNew.Text = "BIT";
+            txtBitOld.Text = "BIT";
             setViewBtnTransfer();
         }
 
@@ -555,7 +596,7 @@ namespace DCI_TRANSFER_SERIAR
                 }
                 tbSearchSerial.Text = "";
 
-                List<MSerial> list = service.getSerialHistoryBySerial(serial.ToUpper());
+                List<MSerial> list = service.getSerialHistoryBySerial(serial);
 
                 if (list.Count > 0)
                 {
@@ -611,7 +652,7 @@ namespace DCI_TRANSFER_SERIAR
             }
             tbSearchSerial.Text = "";
 
-            List<MSerial> list = service.getSerialHistoryBySerial(serial.ToUpper());
+            List<MSerial> list = service.getSerialHistoryBySerial(serial);
 
             if (list.Count > 0)
             {
@@ -649,7 +690,7 @@ namespace DCI_TRANSFER_SERIAR
                     DialogResult dlgCF = MessageBox.Show("ยืนยันการลบข้อมูล \"" + serialOld + "\" (เก่า) -> \"" + serialNew + "\" (ใหม่)  ? ", "ยืนยันการลบข้อมูล ?", MessageBoxButtons.OKCancel);
                     if (dlgCF.Equals(DialogResult.OK))
                     {
-                        bool remove = service.removeSerial(serialOld.ToUpper(), serialNew.ToUpper());
+                        bool remove = service.removeSerial(serialOld, serialNew);
                         if (remove)
                         {
                             setHistory();

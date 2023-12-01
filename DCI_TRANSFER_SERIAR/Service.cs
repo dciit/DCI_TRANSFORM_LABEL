@@ -1,4 +1,5 @@
-﻿using DCI_TRANSFER_SERIAR.Models;
+﻿using DCI_TRANSFER_SERIAR.Contexts;
+using DCI_TRANSFER_SERIAR.Models;
 using MultiSkillCer;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace DCI_TRANSFER_SERIAR
         private ConnectDB conDBSCM = new ConnectDB("DBSCM");
         private ConnectDB conDBIOT = new ConnectDB("DBIOT");
         private ConnectDB conDBIOT122103 = new ConnectDB("DBIOT122103");
+        private DBIOT _DBIOT = new DBIOT();
         private string _ADJ_SERIAL = "ADJ_SERIAL";
 
 
@@ -648,6 +650,71 @@ namespace DCI_TRANSFER_SERIAR
             listTb.Sort();
             listTb.Reverse();
             return listTb;
+        }
+
+        internal MCheckBit validateBit(string serial)
+        {
+            string serial_raw_bit = genBit(serial);
+            string serial_upper_bit = genBit(serial.ToUpper());
+            if (serial_raw_bit == serial_upper_bit)
+            {
+                return new MCheckBit()
+                {
+                    bitCheck = true,
+                    bitRaw = serial_raw_bit,
+                    bitUpper = serial_upper_bit
+                };
+            }
+            else
+            {
+                return new MCheckBit()
+                {
+                    bitCheck = false,
+                    bitRaw = serial_raw_bit,
+                    bitUpper = serial_upper_bit
+                };
+            }
+        }
+        private string genBit(string serial)
+        {
+            char[] subStr = serial.ToCharArray();
+            int sum = 0;
+            foreach (var oChar in serial)
+            {
+                string charLoop = oChar.ToString();
+                if (charLoop.Equals("A"))
+                {
+                    charLoop = "10";
+                }
+                else if (charLoop.Equals("B"))
+                {
+                    charLoop = "11";
+                }
+                else if (charLoop.Equals("C"))
+                {
+                    charLoop = "12";
+                }
+                else if (charLoop.Equals("a"))
+                {
+                    charLoop = "-10";
+                }
+                else if (charLoop.Equals("b"))
+                {
+                    charLoop = "-11";
+                }
+                else if (charLoop.Equals("c"))
+                {
+                    charLoop = "-12";
+                }
+                else
+                {
+                    charLoop = charLoop;
+                }
+                sum += int.Parse(charLoop);
+            }
+            int numDigit = (sum % 43);
+            var cMasterDigit = _DBIOT.MasterDigit.Where(x => x.DigitValue == numDigit.ToString());
+            return cMasterDigit != null ? cMasterDigit.FirstOrDefault().Digit : "";
         }
     }
 }

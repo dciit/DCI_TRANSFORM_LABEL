@@ -1,0 +1,1 @@
+http://websrv01.dci.daikin.co.jp/dciapp/DCI_TRANSFER_LABEL
